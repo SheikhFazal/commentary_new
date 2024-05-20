@@ -14,7 +14,7 @@ interface FollowingProps {
   })[];
 }
 
-export const Following = ({
+export const  Following = ({
   data,
 }: FollowingProps) => {
   const { collapsed } = useSidebar((state) => state);
@@ -25,7 +25,7 @@ export const Following = ({
 
   return (
     <div>
-      {!collapsed && (
+      {/* {!collapsed && (
         <div className="pl-6 mb-4">
           <p className="text-sm text-muted-foreground">
             Following
@@ -41,7 +41,7 @@ export const Following = ({
             isLive={follow.following.stream?.isLive}
           />
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 };

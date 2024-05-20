@@ -30,7 +30,7 @@ export const Container = ({
 
   return (
     <div className={cn(
-      "flex-1",
+      "flex-1 py-12 sm:px-8 px-4",
       collapsed ? "ml-[70px]" : "ml-[70px] lg:ml-60"
     )}>
       {children}

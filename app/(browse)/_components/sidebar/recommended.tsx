@@ -10,11 +10,16 @@ interface RecommendedProps {
   data: (User & {
     stream: { isLive: boolean } | null;
   })[];
-};
+}
 
-export const Recommended = ({
-  data,
-}: any) => {
+const data = [
+  { id: 1, username: "Discover", imageUrl: "", link: "discover" },
+  { id: 2, username: "Category", imageUrl: "", link: "category" },
+  { id: 2, username: "Following", imageUrl: "", link: "following" },
+  { id: 2, username: "Events", imageUrl: "", link: "events" },
+];
+
+export const Recommended = () => {
   const { collapsed } = useSidebar((state) => state);
 
   const showLabel = !collapsed && data?.length > 0;
@@ -23,18 +28,17 @@ export const Recommended = ({
     <div>
       {showLabel && (
         <div className="pl-6 mb-4">
-          <p className="text-sm text-muted-foreground">
-            Recommended
-          </p>
+          <p className="text-sm text-muted-foreground">Recommended</p>
         </div>
       )}
       <ul className="space-y-2 px-2">
-        {data?.map((user:any) => (
+        {data?.map((user: any) => (
           <UserItem
             key={user.id}
             username={user.username}
             imageUrl={user.imageUrl}
-            isLive={user.stream?.isLive}
+            link={user?.link}
+            // isLive={user.stream?.isLive}
           />
         ))}
       </ul>

@@ -33,9 +33,10 @@ export const Thumbnail = ({
     )
   } else {
     content = (
-      <Image
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
         src={src}
-        fill
+        // fill
         alt="Thumbnail"
         className="object-cover transition-transform group-hover:translate-x-2 group-hover:-translate-y-2 rounded-md"
       />

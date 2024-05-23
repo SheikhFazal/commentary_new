@@ -31,14 +31,14 @@ export const UserItem = ({
   const isActive = pathname === href;
 
   return (
-    <Button
-      asChild
-      variant="ghost"
-      className={cn(
-        "w-full h-12",
-        collapsed ? "justify-center" : "justfy-start",
-        isActive && "bg-accent"
-      )}
+    <button
+      // asChild
+      // variant="ghost"
+      className={
+        ` w-full p-2 ${collapsed ? "justify-center" : "justify-start"}`
+        // isActive && "bg-accent"
+      }
+      style={{ borderLeft: `${isActive ? "4px solid #011af0" : ""}` }}
     >
       <Link href={href}>
         <div
@@ -58,7 +58,7 @@ export const UserItem = ({
           )} */}
         </div>
       </Link>
-    </Button>
+    </button>
   );
 };
 

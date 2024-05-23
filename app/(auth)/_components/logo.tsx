@@ -12,7 +12,7 @@ export const Logo = () => {
   return (
     <div
       className=" lg:col-span-7 md:col-span-6 md:block hidden  "
-      style={{ backgroundImage: `url(${"/auth-layout-pic.png"})` }}
+      style={{ backgroundImage: `url(${"/auth-layout-pic.png"})`, backgroundSize:"100% 100%"}}
     >
       <div className=" pt-[330px] h-screen flex flex-col gap-3 justify-center items-center ">
         <Image

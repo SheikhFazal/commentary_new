@@ -30,9 +30,9 @@ export const Container = ({
 
   return (
     <div className={cn(
-      "flex-1 py-12 sm:px-8 px-4",
+      "flex-1 py-12 sm:px-8 px-4 bg-[#090a0d] min-h-[100vh]"  ,
       collapsed ? "ml-[70px]" : "ml-[70px] lg:ml-60"
-    )}>
+    )} style={{borderTopLeftRadius:'30px'}}>
       {children}
     </div>
   );

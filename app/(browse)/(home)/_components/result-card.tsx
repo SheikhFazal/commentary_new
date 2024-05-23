@@ -30,6 +30,7 @@ export const ResultCard = ({ data }: any) => {
             username={data?.user}
             imageUrl={data?.imageUrl}
             isLive={data?.isLive}
+            showBadge
           />
           <div className="flex flex-col text-sm overflow-hidden">
             <p className="truncate font-semibold hover:text-blue-500">

@@ -10,16 +10,22 @@ const font = Poppins({
 
 export const Logo = () => {
   return (
-    <div className="flex flex-col items-center gap-y-4">
-      <div className="bg-white rounded-full p-1">
+    <div
+      className=" lg:col-span-7 md:col-span-6 md:block hidden  "
+      style={{ backgroundImage: `url(${"/auth-layout-pic.png"})` }}
+    >
+      <div className=" pt-[330px] h-screen flex flex-col gap-3 justify-center items-center ">
         <Image
-          src="/spooky.svg"
-          alt="Gamehub"
-          height="80"
-          width="80"
+          src="/CommenTray_logo 1.png"
+          alt="Commentray"
+          height="150"
+          width="260"
         />
+        <p className="text-5xl font-bold text-center leading-tight">
+          All you love in <br /> one place
+        </p>
       </div>
-      <div className={cn(
+      {/* <div className={cn(
         "flex flex-col items-center",
         font.className,
       )}>
@@ -29,7 +35,7 @@ export const Logo = () => {
         <p className="text-sm text-muted-foreground">
           Let&apos;s play
         </p>
-      </div>
+      </div> */}
     </div>
   );
 };

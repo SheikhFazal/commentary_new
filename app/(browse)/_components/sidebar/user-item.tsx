@@ -14,13 +14,13 @@ interface UserItemProps {
   username: string;
   imageUrl: string;
   link: string;
-  // isLive?: boolean;
+  isLive?: boolean;
 }
 
 export const UserItem = ({
   username,
   imageUrl,
-  // isLive,
+  isLive,
   link,
 }: UserItemProps) => {
   const pathname = usePathname();

@@ -98,7 +98,7 @@ const Categories = () => {
                   <button
                     onClick={() => handleClick(ele?.id)}
                     key={ele?.id}
-                    className={`w-full flex items-center rounded-md gap-2 justify-between font-medium px-3 py-5 mb-5  ${
+                    className={`w-full flex items-center rounded-md sm:gap-2 gap-1 justify-between font-medium sm:px-3 px-2 py-5 mb-5  ${
                       ele?.isSelected ? "bg-[#001BFF]" : "bg-[#222938]"
                     }`}
                     type="button"

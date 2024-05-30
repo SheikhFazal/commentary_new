@@ -25,7 +25,7 @@ export const  Following = ({
 
   return (
     <div>
-      {/* {!collapsed && (
+      {!collapsed && (
         <div className="pl-6 mb-4">
           <p className="text-sm text-muted-foreground">
             Following
@@ -38,10 +38,11 @@ export const  Following = ({
             key={follow.following.id}
             username={follow.following.username}
             imageUrl={follow.following.imageUrl}
-            isLive={follow.following.stream?.isLive}
+            isLive={true}
+            link={'/John Smith'}
           />
         ))}
-      </ul> */}
+      </ul>
     </div>
   );
 };

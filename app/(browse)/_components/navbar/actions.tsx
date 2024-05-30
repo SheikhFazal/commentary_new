@@ -24,7 +24,7 @@ export const Actions = async () => {
       </button>
       <button
         onClick={() => router.push("/sign-up")}
-        className="px-4 text-xs py-3 md:rounded-full rounded-xl  bg-[#374CFF]"
+        className="px-4 text-xs py-3 w-24 md:rounded-full rounded-xl  bg-[#374CFF]"
       >
         Join Now
       </button>

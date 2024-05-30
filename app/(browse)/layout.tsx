@@ -5,24 +5,18 @@ import { Container } from "./_components/container";
 import { Sidebar, SidebarSkeleton } from "./_components/sidebar";
 import PageLoader from "../loading";
 
-const BrowseLayout = ({
-  children,
-}: {
-  children: React.ReactNode;
-}) => {
-  return ( 
+const BrowseLayout = ({ children }: { children: React.ReactNode }) => {
+  return (
     <>
       <Navbar />
-      <div className="flex h-full pt-20">
+      <div className="flex   pt-20">
         <Suspense fallback={<PageLoader />}>
           <Sidebar />
         </Suspense>
-        <Container>
-          {children}
-        </Container>
+        <Container>{children}</Container>
       </div>
     </>
   );
 };
- 
+
 export default BrowseLayout;

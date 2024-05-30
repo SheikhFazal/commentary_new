@@ -32,12 +32,12 @@ export const Search = () => {
   return (
     <form
       onSubmit={onSubmit}
-      className="relative w-full lg:w-[400px] flex items-center"
+      className="relative  lg:w-[400px] flex items-center"
     >
       <Input
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        placeholder="Search"
+        placeholder="Search for channels, streamers..."
         className="rounded-r-none focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0"
       />
       {value && (

@@ -40,14 +40,14 @@ interface StreamPlayerProps {
 }
 
 export const StreamPlayer = ({
-  // user,
-  // stream,
-  // isFollowing
+  user,
+  stream,
+  isFollowing
 }: StreamPlayerProps) => {
   const {
-    token,
-    name,
-    identity,
+    token="skdjndasd5s4d5s4d2s1ds5",
+    name="John Smith",
+    identity="true84848",
   } = useViewerToken("skdjndasd5s4d5s4d2s1ds5");
   const { collapsed } = useChatSidebar((state) => state);
 
@@ -72,29 +72,29 @@ export const StreamPlayer = ({
       >
         <div className="space-y-4 col-span-1 lg:col-span-2 xl:col-span-2 2xl:col-span-5 lg:overflow-y-auto hidden-scrollbar pb-10">
           <Video
-            hostName={"user name"}
+            hostName={user?.username}
             hostIdentity={"id56568453584354874wewe"}
           />
           <Header
-            hostName={"user name"}
+            hostName={user?.username}
             hostIdentity={"id56568453584354874wewe"}
-            viewerIdentity={identity}
-            imageUrl={""}
-            isFollowing={true}
-            name={"stream.name"}
+            viewerIdentity={"identity"}
+            imageUrl={"url"}
+            isFollowing={isFollowing}
+            name={stream?.name}
           />
           <InfoCard
             hostIdentity={"id56568453584354874wewe"}
-            viewerIdentity={identity}
-            name={"stream.name"}
+            viewerIdentity={"identity"}
+            name={stream?.name}
             thumbnailUrl={"stream.thumbnailUrl"}
           />
           <AboutCard
-            hostName={"user name"}
+            hostName={user?.username}
             hostIdentity={"id56568453584354874wewe"}
-            viewerIdentity={identity}
-            bio={"user.bio"}
-            followedByCount={2}
+            viewerIdentity={"identity"}
+            bio={user?.bio}
+            followedByCount={user?._count?.followedBy}
           />
         </div>
         <div
@@ -105,9 +105,9 @@ export const StreamPlayer = ({
         >
           <Chat
             viewerName={"name"}
-            hostName={"user name"}
+            hostName={user?.username}
             hostIdentity={"id56568453584354874wewe"}
-            isFollowing={true}
+            isFollowing={isFollowing}
             isChatEnabled={true}
             isChatDelayed={true}
             isChatFollowersOnly={true}

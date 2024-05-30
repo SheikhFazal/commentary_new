@@ -1,19 +1,8 @@
+import React from "react";
 import { notFound } from "next/navigation";
-
-import { getUserByUsername } from "@/lib/user-service";
-import { isFollowingUser } from "@/lib/follow-service";
-import { isBlockedByUser } from "@/lib/block-service";
 import { StreamPlayer } from "@/components/stream-player";
-
-interface UserPageProps {
-  params: {
-    username: string;
-  };
-}
-
-const UserPage = async ({ params }: UserPageProps) => {
-  // const user = await getUserByUsername(params.username);
-
+import { ROLE } from "@/app/enums/role";
+const CommentatorStream = () => {
   const customStream = {
     id: "stringsekljeirjfjlijefnjf_snh",
     isChatEnabled: true,
@@ -30,10 +19,12 @@ const UserPage = async ({ params }: UserPageProps) => {
     bio: "string bio",
     stream: customStream,
     imageUrl: "string",
+    role: "COMMENTATOR",
     _count: {
       followedBy: 786,
     },
   };
+  if (user?.role !== ROLE?.COMMENTATOR) return notFound();
 
   if (!user || !user?.stream) {
     notFound();
@@ -42,15 +33,16 @@ const UserPage = async ({ params }: UserPageProps) => {
   // const isFollowing = await isFollowingUser(user?.id);
   const isFollowing = true;
   // const isBlocked = await isBlockedByUser(user?.id);
-  const isBlocked = true;
+  const isBlocked = false;
 
   if (isBlocked) {
     notFound();
   }
 
   return (
-    <StreamPlayer user={user} stream={user.stream} isFollowing={isFollowing} />
+    <div className="">Commentator Streams</div>
+    // <StreamPlayer user={user} stream={user.stream} isFollowing={isFollowing} />
   );
 };
 
-export default UserPage;
+export default CommentatorStream;

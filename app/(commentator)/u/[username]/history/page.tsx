@@ -1,90 +1,13 @@
-import { getSearch } from "@/lib/search-service";
-import { Skeleton } from "@/components/ui/skeleton";
-
-import { ResultCard, ResultCardSkeleton } from "./result-card";
 import { UserAvatar } from "@/components/user-avatar";
 import { Check } from "lucide-react";
+import React from "react";
 
-interface ResultsProps {
-  term?: string;
-}
-
-export const Results = async ({ term }: ResultsProps) => {
-  // const data = await getSearch(term);
-  // const data: any = [];
-  // const data = [
-  //   {
-  //     id: 1,
-  //     username: "John Smith",
-  //     updatedAt:'10-5-2015',
-  //     isLive: true,
-  //     name: "nam",
-  //     imageUrl:
-  //       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDGg1BR6MYS3MhZYqUz09NV1PvigOy0GOXGDChOWB9Tx-5423zzYcRLlo5cxjNY8dUXOU&usqp=CAU",
-  //     thumbnailUrl:
-  //       "https://www.copahost.com/blog/wp-content/uploads/2019/07/imgsize2.png",
-  //   },
-  //   {
-  //     id: 2,
-  //     username: "John Smith",
-  //     updatedAt:'10-5-2015',
-  //     isLive: true,
-  //     name: "nam",
-  //     imageUrl:
-  //       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDGg1BR6MYS3MhZYqUz09NV1PvigOy0GOXGDChOWB9Tx-5423zzYcRLlo5cxjNY8dUXOU&usqp=CAU",
-  //     thumbnailUrl:
-  //       "https://www.copahost.com/blog/wp-content/uploads/2019/07/imgsize2.png",
-  //   },
-  //   {
-  //     id: 3,
-  //     username: "John Smith",
-  //     updatedAt:'10-5-2015',
-  //     isLive: true,
-  //     name: "nam",
-  //     imageUrl:
-  //       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDGg1BR6MYS3MhZYqUz09NV1PvigOy0GOXGDChOWB9Tx-5423zzYcRLlo5cxjNY8dUXOU&usqp=CAU",
-  //     thumbnailUrl:
-  //       "https://www.copahost.com/blog/wp-content/uploads/2019/07/imgsize2.png",
-  //   },
-  //   {
-  //     id: 4,
-  //     username: "John Smith",
-  //     updatedAt:'10-5-2015',
-  //     isLive: true,
-  //     name: "nam",
-  //     imageUrl:
-  //       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDGg1BR6MYS3MhZYqUz09NV1PvigOy0GOXGDChOWB9Tx-5423zzYcRLlo5cxjNY8dUXOU&usqp=CAU",
-  //     thumbnailUrl:
-  //       "https://www.copahost.com/blog/wp-content/uploads/2019/07/imgsize2.png",
-  //   },
-  //   {
-  //     id: 5,
-  //     username: "John Smith",
-  //     updatedAt:'10-5-2015',
-  //     isLive: false,
-  //     name: "nam",
-  //     imageUrl:
-  //       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDGg1BR6MYS3MhZYqUz09NV1PvigOy0GOXGDChOWB9Tx-5423zzYcRLlo5cxjNY8dUXOU&usqp=CAU",
-  //     thumbnailUrl:
-  //       "https://www.copahost.com/blog/wp-content/uploads/2019/07/imgsize2.png",
-  //   },
-  //   {
-  //     id: 6,
-  //     username: "John Smith",
-  //     updatedAt:'10-5-2015',
-  //     isLive: false,
-  //     name: "nam",
-  //     imageUrl:
-  //       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDGg1BR6MYS3MhZYqUz09NV1PvigOy0GOXGDChOWB9Tx-5423zzYcRLlo5cxjNY8dUXOU&usqp=CAU",
-  //     thumbnailUrl:
-  //       "https://www.copahost.com/blog/wp-content/uploads/2019/07/imgsize2.png",
-  //   },
-  // ];
+const History = () => {
   const data = [
     {
       id: 1,
       title: `ACC Men's Premier Cup
-| Oman vs Cambodia...`,
+    | Oman vs Cambodia...`,
       views: "3.6M",
       time: "2 Years",
       isGreenChecked: true,
@@ -99,7 +22,7 @@ export const Results = async ({ term }: ResultsProps) => {
     {
       id: 2,
       title: `ACC Men's Premier Cup
-| Oman vs Cambodia...`,
+    | Oman vs Cambodia...`,
       views: "3.6M",
       time: "2 Years",
       isGreenChecked: true,
@@ -114,7 +37,7 @@ export const Results = async ({ term }: ResultsProps) => {
     {
       id: 3,
       title: `ACC Men's Premier Cup
-| Oman vs Cambodia...`,
+    | Oman vs Cambodia...`,
       views: "3.6M",
       time: "2 Years",
       isGreenChecked: true,
@@ -129,7 +52,7 @@ export const Results = async ({ term }: ResultsProps) => {
     {
       id: 4,
       title: `ACC Men's Premier Cup
-| Oman vs Cambodia...`,
+    | Oman vs Cambodia...`,
       views: "3.6M",
       time: "2 Years",
       isGreenChecked: true,
@@ -144,7 +67,7 @@ export const Results = async ({ term }: ResultsProps) => {
     {
       id: 5,
       title: `ACC Men's Premier Cup
-| Oman vs Cambodia...`,
+    | Oman vs Cambodia...`,
       views: "3.6M",
       time: "2 Years",
       isGreenChecked: true,
@@ -159,7 +82,7 @@ export const Results = async ({ term }: ResultsProps) => {
     {
       id: 6,
       title: `ACC Men's Premier Cup
-| Oman vs Cambodia...`,
+    | Oman vs Cambodia...`,
       views: "3.6M",
       time: "2 Years",
       isGreenChecked: true,
@@ -174,7 +97,7 @@ export const Results = async ({ term }: ResultsProps) => {
     {
       id: 7,
       title: `ACC Men's Premier Cup
-| Oman vs Cambodia...`,
+    | Oman vs Cambodia...`,
       views: "3.6M",
       time: "2 Years",
       isGreenChecked: true,
@@ -189,7 +112,7 @@ export const Results = async ({ term }: ResultsProps) => {
     {
       id: 8,
       title: `ACC Men's Premier Cup
-| Oman vs Cambodia...`,
+    | Oman vs Cambodia...`,
       views: "3.6M",
       time: "2 Years",
       isGreenChecked: true,
@@ -205,26 +128,21 @@ export const Results = async ({ term }: ResultsProps) => {
 
   return (
     <div>
-      <h2 className="text-xl font-semibold mb-6">
-        Search Results &quot;{term}&quot;
-      </h2>
+      <h2 className="text-xl font-semibold mb-6">Watch History</h2>
       {data?.length === 0 && (
         <p className="text-muted-foreground text-sm">
           No results found. Try searching for something else
         </p>
       )}
       <div className="flex flex-col gap-y-4">
-        {/* {data?.map((result: any) => (
-          <ResultCard data={result} key={result.id} />
-        ))} */}
         {data?.length &&
           data?.map((ele) => (
-            <div key={ele?.id} className="px-3 mb-5 grid grid-cols-12 gap-8">
-              <div className="overflow-hidden h-52 rounded-3xl md:col-span-4 sm:col-span-6 col-span-12">
+            <div key={ele?.id} className="px-3 mb-5 grid grid-cols-12 sm:gap-8 gap-3">
+              <div className="overflow-hidden md:h-40 rounded-xl lg:col-span-3 md:col-span-4 sm:col-span-6 col-span-12">
                 {/*  eslint-disable-next-line @next/next/no-img-element */}
                 <img src={ele?.thumbnailUrl} alt="" className="h-full w-full" />
               </div>
-              <div className="md:col-span-8 sm:col-span-6 col-span-12">
+              <div className="lg:col-span-9 md:col-span-8 sm:col-span-6 col-span-12">
                 <div className="flex items-center gap-x-3">
                   <UserAvatar
                     username=""
@@ -255,15 +173,4 @@ export const Results = async ({ term }: ResultsProps) => {
   );
 };
 
-export const ResultsSkeleton = () => {
-  return (
-    <div>
-      <Skeleton className="h-8 w-[290px] mb-4" />
-      <div className="flex flex-col gap-y-4">
-        {[...Array(4)].map((_, i) => (
-          <ResultCardSkeleton key={i} />
-        ))}
-      </div>
-    </div>
-  );
-};
+export default History;

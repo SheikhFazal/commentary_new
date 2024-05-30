@@ -7,6 +7,7 @@ import {
   KeyRound,
   MessageSquare,
   Users,
+  History 
 } from "lucide-react";
 
 import { NavItem, NavItemSkeleton } from "./nav-item";
@@ -18,7 +19,7 @@ export const Navigation = () => {
   const routes = [
     {
       label: "Stream",
-      href: `/u/fake-user`,
+      href: `/u/fake-user/stream`,
       icon: Fullscreen,
     },
     {
@@ -35,6 +36,11 @@ export const Navigation = () => {
       label: "Community",
       href: `/u/fake-user/community`,
       icon: Users,
+    },
+    {
+      label: "History",
+      href: `/u/fake-user/history`,
+      icon: History,
     },
   ];
 

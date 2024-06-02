@@ -12,6 +12,8 @@ body,
 .hidden-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+  overflow: auto;
+
 }
 
 .hidden-scrollbar::-webkit-scrollbar { 

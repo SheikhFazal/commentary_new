@@ -4,7 +4,7 @@ import AdminStream from "../(admin)/admin-streams";
 import { ROLE } from "@/app/enums/role";
 
 const Streams = () => {
-  const user = { role: "ADMIN" };
+  const user = { role: "COMMENTATOR" };
   return (
     <>
       {user?.role === ROLE?.COMMENTATOR && <CommentatorStream  />}

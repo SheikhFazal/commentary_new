@@ -13,7 +13,7 @@ interface NavItemProps {
   label: string;
   href: string;
   isActive: boolean;
-};
+}
 
 export const NavItem = ({
   icon: Icon,
@@ -28,19 +28,25 @@ export const NavItem = ({
       asChild
       variant="ghost"
       className={cn(
-        "w-full h-12",
+        "w-full h-12 rounded-none",
         collapsed ? "justify-center" : "justify-start",
-        isActive && "bg-accent",
+        // isActive && "bg-accent"
       )}
     >
-      <Link href={href}>
+      <Link
+        href={href}
+        style={{ borderLeft: `${isActive ? "4px solid #011af0" : ""}` }}
+      >
         <div className="flex items-center gap-x-4">
-          <Icon className={cn(
-            "h-4 w-4",
-            collapsed ? "mr-0" : "mr-2"
-          )} />
+          <Icon
+            className={cn(
+              "h-4 w-4",
+              collapsed ? "mr-0" : "mr-2",
+              isActive ? "text-[#001BFF]" : "text-[#778195]"
+            )}
+          />
           {!collapsed && (
-            <span>
+            <span className={isActive ? "text-[#011af0]" : "text-[#778195]"}>
               {label}
             </span>
           )}

@@ -15,6 +15,7 @@ interface UserItemProps {
   imageUrl: string;
   link: string;
   isLive?: boolean;
+  icon?: any;
 }
 
 export const UserItem = ({
@@ -22,6 +23,7 @@ export const UserItem = ({
   imageUrl,
   isLive,
   link,
+  icon,
 }: UserItemProps) => {
   const pathname = usePathname();
 
@@ -31,34 +33,40 @@ export const UserItem = ({
   const isActive = pathname === href;
 
   return (
-    <button
-      // asChild
-      // variant="ghost"
-      className={
-        ` w-full p-2 ${collapsed ? "justify-center" : "justify-start"}`
-        // isActive && "bg-accent"
-      }
-      style={{ borderLeft: `${isActive ? "4px solid #011af0" : ""}` }}
-    >
-      <Link href={href}>
+    <Link href={href}>
+      <button
+        // asChild
+        // variant="ghost"
+        className={
+          `flex  w-full p-3 ${collapsed ? "justify-center" : "justify-start"}`
+          // isActive && "bg-accent"
+        }
+        style={{ borderLeft: `${isActive ? "4px solid #011af0" : ""}` }}
+      >
         <div
           className={cn(
-            "flex items-center w-full gap-x-4",
+            "flex  w-full items-center gap-6",
             collapsed && "justify-center"
           )}
         >
           <UserAvatar
             imageUrl={imageUrl}
             username={username}
+            icon={icon}
+            link={link}
             // isLive={isLive}
           />
-          {!collapsed && <p className="truncate">{username}</p>}
+          {!collapsed && (
+            <p className={isActive ? "text-[#011af0]" : "text-[#778195]"}>
+              {username}
+            </p>
+          )}
           {/* {!collapsed  && (
             <LiveBadge className="ml-auto" />
           )} */}
         </div>
-      </Link>
-    </button>
+      </button>
+    </Link>
   );
 };
 

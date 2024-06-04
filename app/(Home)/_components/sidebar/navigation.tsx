@@ -19,7 +19,7 @@ import { ROLE } from "@/app/enums/role";
 export const Navigation = () => {
   const pathname = usePathname();
   // const { user } = useUser();
-  const user = { role: "ADMIN" };
+  const user = { role: "COMMENTATOR" };
   const routes = [
     user?.role === ROLE?.ADMIN
       ? {

@@ -6,7 +6,7 @@ import { Navbar } from "./_components/navbar";
 import { Sidebar } from "./_components/sidebar";
 import { usePathname, useRouter } from "next/navigation";
 
-const user = { role: "ADMIN" };
+const user = { role: "COMMENTATOR" };
 
 interface HomeLayoutProps {
   children: ReactNode;

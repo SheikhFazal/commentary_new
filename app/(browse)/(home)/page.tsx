@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 
-import { Results, ResultsSkeleton } from "./_components/results";
+import { ResultsSkeleton, YouMightLike } from "./_components/you-might-like";
 import Categories from "./_components/categories";
 import FeatureClips from "./_components/feature-clips";
 
@@ -12,7 +12,7 @@ export default function Page() {
     >
       <Suspense fallback={<ResultsSkeleton />}>
         <Categories />
-        <Results />
+        <YouMightLike />
         <FeatureClips />
       </Suspense>
     </div>

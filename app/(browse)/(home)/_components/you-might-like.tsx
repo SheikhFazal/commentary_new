@@ -7,8 +7,9 @@ import Slider from "react-slick";
 import { useRef, useState } from "react";
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
-import { MoveRight, MoveLeft, Mic } from "lucide-react";
+import { MoveRight, MoveLeft, Mic, Radio } from "lucide-react";
 import { CustomSlider } from "./slider";
+import { UserAvatar } from "@/components/user-avatar";
 
 const youMightLikeData = [
   { id: 1, name: "Audio Only", icon: <Mic />, isSelected: true },
@@ -20,7 +21,7 @@ const youMightLikeData = [
   { id: 7, name: "Audio Only", icon: <Mic />, isSelected: false },
   { id: 8, name: "Audio Only", icon: <Mic />, isSelected: false },
 ];
-export const Results = () => {
+export const YouMightLike = () => {
   const [youMightLike, setMightLike] = useState(youMightLikeData);
   const sliderRef = useRef<Slider | null>(null);
   const next = () => {
@@ -36,8 +37,9 @@ export const Results = () => {
     {
       id: 1,
       user: "John Smith",
+      title: "FIFA WorldCup 2024",
       isLive: true,
-      name: "nam",
+      name: "CricketOnline",
       imageUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDGg1BR6MYS3MhZYqUz09NV1PvigOy0GOXGDChOWB9Tx-5423zzYcRLlo5cxjNY8dUXOU&usqp=CAU",
       thumbnailUrl:
@@ -46,8 +48,9 @@ export const Results = () => {
     {
       id: 2,
       user: "John Smith",
+      title: "FIFA WorldCup 2024",
       isLive: true,
-      name: "nam",
+      name: "CricketOnline",
       imageUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDGg1BR6MYS3MhZYqUz09NV1PvigOy0GOXGDChOWB9Tx-5423zzYcRLlo5cxjNY8dUXOU&usqp=CAU",
       thumbnailUrl:
@@ -56,8 +59,9 @@ export const Results = () => {
     {
       id: 3,
       user: "John Smith",
+      title: "FIFA WorldCup 2024",
       isLive: true,
-      name: "nam",
+      name: "CricketOnline",
       imageUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDGg1BR6MYS3MhZYqUz09NV1PvigOy0GOXGDChOWB9Tx-5423zzYcRLlo5cxjNY8dUXOU&usqp=CAU",
       thumbnailUrl:
@@ -66,8 +70,9 @@ export const Results = () => {
     {
       id: 4,
       user: "John Smith",
+      title: "FIFA WorldCup 2024",
       isLive: true,
-      name: "nam",
+      name: "CricketOnline",
       imageUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDGg1BR6MYS3MhZYqUz09NV1PvigOy0GOXGDChOWB9Tx-5423zzYcRLlo5cxjNY8dUXOU&usqp=CAU",
       thumbnailUrl:
@@ -76,8 +81,9 @@ export const Results = () => {
     {
       id: 5,
       user: "John Smith",
+      title: "FIFA WorldCup 2024",
       isLive: false,
-      name: "nam",
+      name: "CricketOnline",
       imageUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDGg1BR6MYS3MhZYqUz09NV1PvigOy0GOXGDChOWB9Tx-5423zzYcRLlo5cxjNY8dUXOU&usqp=CAU",
       thumbnailUrl:
@@ -86,8 +92,9 @@ export const Results = () => {
     {
       id: 6,
       user: "John Smith",
+      title: "FIFA WorldCup 2024",
       isLive: false,
-      name: "nam",
+      name: "CricketOnline",
       imageUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDGg1BR6MYS3MhZYqUz09NV1PvigOy0GOXGDChOWB9Tx-5423zzYcRLlo5cxjNY8dUXOU&usqp=CAU",
       thumbnailUrl:
@@ -132,9 +139,48 @@ export const Results = () => {
               handleSelect={handleClick}
             />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-8">
-            {data?.map((result: any) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-8 gap-3">
+            {/* {data?.map((result: any) => (
               <ResultCard key={result.id} data={result} />
+            ))} */}
+            {data?.map((ele) => (
+              <div key={ele?.id} className="mb-3">
+                <div className="overflow-hidden h-40 rounded-3xl w-full relative">
+                  {ele?.isLive && (
+                    <div className="absolute left-5 top-5 rounded-full text-sm flex items-center gap-1 py-2 justify-center w-[70px] bg-[#E2454C]">
+                      <Radio size={17} /> Live
+                    </div>
+                  )}
+                  {/*  eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={ele?.thumbnailUrl} alt="" className="w-full" />
+                </div>
+                <div className="my-2">
+                  <span className="font-semibold ">{ele?.title}</span>
+                </div>
+
+                <div className="mt-3 flex flex-wrap justify-between items-center">
+                  <div className="flex items-center gap-x-3">
+                    <UserAvatar
+                      username=""
+                      imageUrl={ele?.imageUrl}
+                      isLive={false}
+                    />
+                    <div className="flex flex-col text-xs overflow-hidden">
+                      <p className="truncate  hover:text-blue-500 flex gap-2 item-center">
+                        {ele?.name}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="">
+                    <button
+                      type="button"
+                      className="py-3 px-3 text-xs  rounded-full  bg-[#001BFF]"
+                    >
+                      Listen Now
+                    </button>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
           <div className="flex justify-center items-center gap-4 my-10">

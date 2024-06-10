@@ -11,17 +11,17 @@ import { MoveRight, MoveLeft, Mic, Radio } from "lucide-react";
 import { CustomSlider } from "./slider";
 import { UserAvatar } from "@/components/user-avatar";
 
-const youMightLikeData = [
-  { id: 1, name: "Audio Only", icon: <Mic />, isSelected: true },
-  { id: 2, name: "Group Commentary", icon: <Mic />, isSelected: false },
-  { id: 3, name: "Celebrity Commentary", icon: <Mic />, isSelected: false },
-  { id: 4, name: "Get Involved", icon: <Mic />, isSelected: false },
-  { id: 5, name: "Audio Only", icon: <Mic />, isSelected: false },
-  { id: 6, name: "Audio Only", icon: <Mic />, isSelected: false },
-  { id: 7, name: "Audio Only", icon: <Mic />, isSelected: false },
-  { id: 8, name: "Audio Only", icon: <Mic />, isSelected: false },
-];
 export const YouMightLike = () => {
+  const youMightLikeData = [
+    { id: 1, name: "Audio Only", icon: <Mic />, isSelected: true },
+    { id: 2, name: "Group Commentary", icon: <Mic />, isSelected: false },
+    { id: 3, name: "Celebrity Commentary", icon: <Mic />, isSelected: false },
+    { id: 4, name: "Get Involved", icon: <Mic />, isSelected: false },
+    { id: 5, name: "Audio Only", icon: <Mic />, isSelected: false },
+    { id: 6, name: "Audio Only", icon: <Mic />, isSelected: false },
+    { id: 7, name: "Audio Only", icon: <Mic />, isSelected: false },
+    { id: 8, name: "Audio Only", icon: <Mic />, isSelected: false },
+  ];
   const [youMightLike, setMightLike] = useState(youMightLikeData);
   const sliderRef = useRef<Slider | null>(null);
   const next = () => {

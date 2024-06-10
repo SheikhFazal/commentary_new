@@ -5,6 +5,7 @@ import { Container } from "./_components/container";
 import { Navbar } from "./_components/navbar";
 import { Sidebar } from "./_components/sidebar";
 import { usePathname } from "next/navigation";
+import NotFoundPage from "../not-found";
 
 const user = { role: "COMMENTATOR" };
 
@@ -49,6 +50,8 @@ const HomeLayout = ({ children }: any) => {
             .default;
           setLoadedComponent(<HistoryPage />);
         }
+      } else {
+        return <NotFoundPage />;
       }
     };
 

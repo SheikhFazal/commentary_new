@@ -10,11 +10,11 @@ export default function Page() {
     // className="h-full  max-w-screen-2xl mx-auto"
     className="mx-auto min-h-[100vh]"
     >
-      <Suspense fallback={<ResultsSkeleton />}>
+      {/* <Suspense fallback={<ResultsSkeleton />}> */}
         <Categories />
         <YouMightLike />
         <FeatureClips />
-      </Suspense>
+      {/* </Suspense> */}
     </div>
   );
 }

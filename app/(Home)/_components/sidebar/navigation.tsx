@@ -19,7 +19,7 @@ import { ROLE } from "@/app/enums/role";
 export const Navigation = () => {
   const pathname = usePathname();
   // const { user } = useUser();
-  const user = { role: "COMMENTATOR" };
+  const user = { role: "COMMENTATOR", username: "John Smith" };
   const routes = [
     user?.role === ROLE?.ADMIN
       ? {
@@ -79,15 +79,15 @@ export const Navigation = () => {
       : null,
   ].filter(Boolean);
 
-  // if (!user?.username) {
-  //   return (
-  //     <ul className="space-y-2">
-  //       {[...Array(4)].map((_, i) => (
-  //         <NavItemSkeleton key={i} />
-  //       ))}
-  //     </ul>
-  //   );
-  // }
+  if (!user?.username) {
+    return (
+      <ul className="space-y-2">
+        {[...Array(4)].map((_, i) => (
+          <NavItemSkeleton key={i} />
+        ))}
+      </ul>
+    );
+  }
 
   return (
     <ul className="space-y-2 px-2 pt-4 lg:pt-0">

@@ -5,7 +5,7 @@ import { getBlockedUsers } from "@/lib/block-service";
 import { DataTable } from "./_components/data-table";
 import { columns } from "./_components/columns";
 
-const CommunityPage = async () => {
+const CommunityPage = () => {
   // const blockedUsers = await getBlockedUsers();
   const blockedUsers = [
     {

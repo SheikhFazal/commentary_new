@@ -1,10 +1,10 @@
 "use client";
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, Suspense, useEffect, useState } from "react";
 
 import { Container } from "./_components/container";
 import { Navbar } from "./_components/navbar";
 import { Sidebar } from "./_components/sidebar";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 const user = { role: "COMMENTATOR" };
 
@@ -12,9 +12,7 @@ interface HomeLayoutProps {
   children: ReactNode;
 }
 const HomeLayout = ({ children }: any) => {
-  const router = useRouter();
   const pathname = usePathname();
-  console.log(pathname);
 
   const [loadedComponent, setLoadedComponent] = useState<ReactNode>(null);
 

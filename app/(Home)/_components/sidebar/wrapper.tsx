@@ -17,7 +17,7 @@ export const Wrapper = ({ children }: WrapperProps) => {
       //   collapsed && "lg:w-[70px]"
       // )}
       className={cn(
-        "fixed left-0 flex flex-col w-60 h-full bg-[#11151e]  z-50",
+        "fixed left-0 flex flex-col w-60 h-full bg-[#11151e]  ",
         collapsed && "w-[70px]"
       )}
     >

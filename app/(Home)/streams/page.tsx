@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import CommentatorStream from "../(commentator)/commentator-streams";
 import AdminStream from "../(admin)/admin-streams";

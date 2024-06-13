@@ -1,11 +1,12 @@
 import { db } from "@/lib/db";
-import { getSelf } from "@/lib/auth-service";
+// import { getSelf } from "@/lib/auth-service";
 
 export const getSearch = async (term?: string) => {
   let userId;
 
   try {
-    const self = await getSelf();
+    // const self = await getSelf();
+    const self = { id: "asfkmskdfms;lmolmgomd;fg", username: "fake user" };
     userId = self.id;
   } catch {
     userId = null;
@@ -36,7 +37,7 @@ export const getSearch = async (term?: string) => {
               username: {
                 contains: term,
               },
-            }
+            },
           },
         ],
       },
@@ -71,7 +72,7 @@ export const getSearch = async (term?: string) => {
               username: {
                 contains: term,
               },
-            }
+            },
           },
         ],
       },
@@ -92,7 +93,7 @@ export const getSearch = async (term?: string) => {
         },
       ],
     });
-  };
+  }
 
   return streams;
 };

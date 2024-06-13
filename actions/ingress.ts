@@ -12,7 +12,7 @@ import {
 import { TrackSource } from "livekit-server-sdk/dist/proto/livekit_models";
 
 import { db } from "@/lib/db";
-import { getSelf } from "@/lib/auth-service";
+// import { getSelf } from "@/lib/auth-service";
 import { revalidatePath } from "next/cache";
 
 const roomService = new RoomServiceClient(
@@ -42,7 +42,8 @@ export const resetIngresses = async (hostIdentity: string) => {
 };
 
 export const createIngress = async (ingressType: IngressInput) => {
-  const self = await getSelf();
+  // const self = await getSelf();
+  const self = {id:'asfkmskdfms;lmolmgomd;fg', username:'fake user'}
 
   await resetIngresses(self.id);
 

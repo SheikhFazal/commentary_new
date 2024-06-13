@@ -4,14 +4,15 @@ import { Stream } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 
 import { db } from "@/lib/db";
-import { getSelf } from "@/lib/auth-service";
+// import { getSelf } from "@/lib/auth-service";
 
 export const updateStream = async (values: Partial<Stream>) => {
   try {
-    const self = await getSelf();
+    // const self = await getSelf();
+    const self = { id: "asfkmskdfms;lmolmgomd;fg", username: "fake user" };
     const selfStream = await db.stream.findUnique({
       where: {
-        userId: self.id,
+        userId: self?.id,
       },
     });
 
@@ -43,5 +44,5 @@ export const updateStream = async (values: Partial<Stream>) => {
     return stream;
   } catch {
     throw new Error("Internal Error");
-  };
+  }
 };

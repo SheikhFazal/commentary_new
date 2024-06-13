@@ -118,7 +118,7 @@ export const Actions = () => {
             <div className=" rounded  " role="none">
               {commentatorLinks?.map((ele: any) => (
                 <button
-                  key={ele?.id}
+                  key={ele?.id} 
                   className="flex items-center gap-3 px-4 py-2 text-xs hover:bg-blue-600 rounded w-full text-left"
                   role="menuitem"
                   onClick={() => router.push(ele?.link)}

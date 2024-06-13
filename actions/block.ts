@@ -17,7 +17,7 @@ export const onBlock = async (id: string) => {
   const self = { id: "asfkmskdfms;lmolmgomd;fg", username: "fake user" };
 
   let blockedUser;
-
+ 
   try {
     blockedUser = await blockUser(id);
   } catch {

@@ -1,9 +1,27 @@
 "use client";
+import useUserStore from "@/store/use-store-user";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { toast } from "sonner";
 
+const credentials = {
+  admin: {
+    email: "admin@example.com",
+    password: "admin123",
+    username: "Admin",
+    role: "ADMIN",
+  },
+  commentator: {
+    email: "commentator@example.com",
+    password: "commentator123",
+    username: "John Smith",
+    role: "COMMENTATOR",
+  },
+};
 const SignIn = () => {
+  const setUser = useUserStore((state: any) => state.setUser);
+
   const router = useRouter();
   const [formValue, setFormValue] = useState({
     email: "",
@@ -19,6 +37,26 @@ const SignIn = () => {
   };
   const handleSubmit = (e: any) => {
     e.preventDefault();
+    const { email, password } = formValue;
+
+    // Validate credentials
+    if (
+      email === credentials.admin.email &&
+      password === credentials.admin.password
+    ) {
+      toast.success("Login successfully!");
+      setUser(credentials.admin);
+      router.push("/dashboard");
+    } else if (
+      email === credentials.commentator.email &&
+      password === credentials.commentator.password
+    ) {
+      toast.success("Login successfully!");
+      setUser(credentials.commentator);
+      router.push("/streams");
+    } else {
+      toast.error("Invalid email or password");
+    }
   };
   return (
     <div className="lg:col-span-5 md:col-span-6 col-span-12 py-16 lg:px-16 md:px-12 px-8 bg-[#11151E]">

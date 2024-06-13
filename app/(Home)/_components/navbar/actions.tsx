@@ -11,8 +11,10 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Notification } from "./notification";
 import { GoLiveModalBox } from "./go-live-modal";
+import useUserStore from "@/store/use-store-user";
 
 export const Actions = () => {
+  const setUser = useUserStore((state: any) => state.setUser);
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [isNotificationOpen, setIsNotification] = useState(false);
@@ -27,16 +29,27 @@ export const Actions = () => {
     console.log(action);
     setIsOpen(false);
   };
-  const user = {
-    imageUrl:
-      "https://st3.depositphotos.com/15648834/17930/v/450/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
-    name: "cricket.com.au ",
-    email: "@cricketcomau",
-    role: "COMMENTATOR",
-  };
+  const user = useUserStore((state: any) => state?.user);
+  // const user = {
+  //   imageUrl:
+  //     "https://st3.depositphotos.com/15648834/17930/v/450/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
+  //   name: "cricket.com.au ",
+  //   email: "@cricketcomau",
+  //   role: "COMMENTATOR",
+  // };
 
-  const commentatorLinks = [
-    { id: 1, text: "Dashboard", link: "/streams", icon: <Gauge size={17} /> },
+  const commentatorLinks: any = [
+    {
+      id: 1,
+      text: "Dashboard",
+      link:
+        user?.role === "COMMENTATOR"
+          ? "/streams"
+          : user?.role === "ADMIN" && "/dashboard",
+      // link1: "/streams",
+      // link2: "/dashboard",
+      icon: <Gauge size={17} />,
+    },
     {
       id: 2,
       text: "Manage Account",
@@ -74,7 +87,11 @@ export const Actions = () => {
             onClick={toggleDropdown}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={user?.imageUrl} className="h-9 w-9 rounded-full" alt="" />
+            <img
+              src={`https://st3.depositphotos.com/15648834/17930/v/450/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg`}
+              className="h-9 w-9 rounded-full"
+              alt=""
+            />
             <ChevronDown size={16} />
           </button>
         </div>
@@ -89,17 +106,17 @@ export const Actions = () => {
             <div className="p-3 flex items-center  gap-2">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={user?.imageUrl}
+                src={`https://st3.depositphotos.com/15648834/17930/v/450/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg`}
                 className="h-7 w-7 rounded-full"
                 alt=""
               />
-              <div className="flex flex-col">
+              <div className="flex flex-col overflow-hidden">
                 <span>{user?.name}</span>
-                <span className="text-xs ">{user?.email}</span>
+                <span className="text-xs " >{user?.email}</span>
               </div>
             </div>
             <div className=" rounded  " role="none">
-              {commentatorLinks?.map((ele) => (
+              {commentatorLinks?.map((ele: any) => (
                 <button
                   key={ele?.id}
                   className="flex items-center gap-3 px-4 py-2 text-xs hover:bg-blue-600 rounded w-full text-left"
@@ -114,7 +131,7 @@ export const Actions = () => {
               <button
                 className=" flex items-center gap-3 px-4 py-2 text-xs  hover:bg-blue-600 rounded w-full text-left"
                 role="menuitem"
-                // onClick={() => handleMenuItemClick("Delete Stream")}
+                onClick={() => setUser(null)}
               >
                 <LogOut size={17} /> Logout
               </button>

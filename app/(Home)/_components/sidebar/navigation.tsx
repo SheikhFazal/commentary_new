@@ -15,11 +15,14 @@ import {
 
 import { NavItem, NavItemSkeleton } from "./nav-item";
 import { ROLE } from "@/app/enums/role";
+import useUserStore from "@/store/use-store-user";
 
 export const Navigation = () => {
   const pathname = usePathname();
   // const { user } = useUser();
-  const user = { role: "COMMENTATOR", username: "John Smith" };
+
+  const user = useUserStore((state: any) => state.user);
+
   const routes = [
     user?.role === ROLE?.ADMIN
       ? {

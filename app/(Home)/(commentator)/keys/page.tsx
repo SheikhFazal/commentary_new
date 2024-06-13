@@ -7,10 +7,11 @@ import { ConnectModal } from "./_components/connect-modal";
 import { ROLE } from "@/app/enums/role";
 import { notFound } from "next/navigation";
 
-const KeysPage = async () => {
+const KeysPage = () => {
   // const self = await getSelf();
   const user = { role: "COMMENTATOR" };
-  const stream: any = await getStreamByUserId("515d4s84d51fd84fd51f6df");
+  // const stream: any = await getStreamByUserId("515d4s84d51fd84fd51f6df");
+  const stream: any = "515d4s84d51fd84fd51f6df";
 
   if (!stream) {
     throw new Error("Stream not found");

@@ -21,35 +21,34 @@ export const CustomSlider = ({
     // slidePerRow: isSlidePerRow && 2,
     slidesToScroll: 1,
     // row:1,
-    // responsive: [
-    //   {
-    //     breakpoint: 1024,
-    //     settings: {
-    //       slidesToShow: 2,
-    //       slidesToScroll: 1,
-    //       infinite: true,
-    //       dots: true,
-    //     },
-    //   },
-    //   {
-    //     breakpoint: 600,
-    //     settings: {
-    //       slidesToShow: 2,
-    //       slidesToScroll: 2,
-    //       initialSlide: 2,
-    //     },
-    //   },
-    //   {
-    //     breakpoint: 480,
-    //     settings: {
-    //       slidesToShow: 1,
-    //       slidesToScroll: 1,
-    //     },
-    //   },
-    // ],
+    responsive: [
+      {
+        breakpoint: 1224,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
   return (
-    <div className="slider-container  mb-10 max-w-[75vw] overflow-hidden">
+    <div className="slider-container max-w-[75vw] ">
       {array?.length && (
         <Slider ref={sliderRef} {...settings}>
           {array?.map((ele: any) => (

@@ -29,14 +29,14 @@ const data = [
     icon: <LayoutGrid size={25} />,
   },
   {
-    id: 2,
+    id: 3,
     username: "Following",
     imageUrl: "",
     link: "following",
     icon: <Users />,
   },
   {
-    id: 2,
+    id: 4,
     username: "Events",
     imageUrl: "",
     link: "events",

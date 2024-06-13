@@ -19,8 +19,6 @@ export const YouMightLike = () => {
     { id: 4, name: "Get Involved", icon: <Mic />, isSelected: false },
     { id: 5, name: "Audio Only", icon: <Mic />, isSelected: false },
     { id: 6, name: "Audio Only", icon: <Mic />, isSelected: false },
-    { id: 7, name: "Audio Only", icon: <Mic />, isSelected: false },
-    { id: 8, name: "Audio Only", icon: <Mic />, isSelected: false },
   ];
   const [youMightLike, setMightLike] = useState(youMightLikeData);
   const sliderRef = useRef<Slider | null>(null);
@@ -132,7 +130,7 @@ export const YouMightLike = () => {
               </button>
             </div>
           </div>
-          <div className="">
+          <div className="mb-10">
             <CustomSlider
               array={youMightLike}
               sliderRef={sliderRef}

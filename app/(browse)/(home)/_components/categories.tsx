@@ -1,19 +1,19 @@
 "use client";
-import { Mic, MoveLeft, MoveRight } from "lucide-react";
+import { MoveLeft, MoveRight } from "lucide-react";
 import React, { useRef, useState } from "react";
 
 import Slider from "react-slick";
 import { ChevronRight } from "lucide-react";
 
 const categoriesData = [
-  { id: 1, name: "Football", icon: <Mic />, isSelected: true },
-  { id: 2, name: "Cricket", icon: <Mic />, isSelected: false },
-  { id: 3, name: "Tennis", icon: <Mic />, isSelected: false },
-  { id: 4, name: "Hockey", icon: <Mic />, isSelected: false },
-  { id: 5, name: "Golf", icon: <Mic />, isSelected: false },
-  { id: 6, name: "Badminton", icon: <Mic />, isSelected: false },
-  { id: 7, name: "Boxing", icon: <Mic />, isSelected: false },
-  { id: 8, name: "Horse Racing", icon: <Mic />, isSelected: false },
+  { id: 1, name: "Football", icon: "/football.png", isSelected: true },
+  { id: 2, name: "Cricket", icon: "/cricket.png", isSelected: false },
+  { id: 3, name: "Tennis", icon: "/tennis.png", isSelected: false },
+  { id: 4, name: "Hockey", icon: "/hockey.png", isSelected: false },
+  { id: 5, name: "Golf", icon: "/golf.png", isSelected: false },
+  { id: 6, name: "Badminton", icon: "/badminton.png", isSelected: false },
+  { id: 7, name: "Boxing", icon: "/boxing.png", isSelected: false },
+  { id: 8, name: "Horse Racing", icon: "/horse-riding.png", isSelected: false },
 ];
 const Categories = () => {
   const [categories, setCategories] = useState(categoriesData);
@@ -45,18 +45,18 @@ const Categories = () => {
     arrows: false,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1224,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          infinite: true,
+        
         },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           // initialSlide: 2,
         },
       },
@@ -90,7 +90,7 @@ const Categories = () => {
       </div>
       <div className="overflow-hidden">
         {/* <CustomSlider isSlidePerRow array={categoriesData} sliderRef={sliderRef} settingData={settings} /> */}
-        <div className="slider-container max-w-[77vw] overflow-hidden">
+        <div className="slider-container max-w-[77vw] ">
           <Slider ref={sliderRef} {...settings}>
             {categories?.length &&
               categories?.map((ele) => (
@@ -103,7 +103,8 @@ const Categories = () => {
                     }`}
                     type="button"
                   >
-                    {ele?.icon}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={ele?.icon} className="h-10" alt="" />
                     {ele?.name}
                     <ChevronRight
                       color={ele?.isSelected ? "#ffff" : "#394257"}

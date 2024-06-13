@@ -47,7 +47,11 @@ const SignIn = () => {
           type="password"
         />
         <div className="flex justify-end my-5">
-          <button type="button" className="text-sm underline text-[#001BFF]">
+          <button
+            onClick={() => router.push("/forgot-password")}
+            type="button"
+            className="text-sm underline text-[#001BFF]"
+          >
             Forgot Password?
           </button>
         </div>

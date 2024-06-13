@@ -6,15 +6,13 @@ import FeatureClips from "./_components/feature-clips";
 
 export default function Page() {
   return (
-    <div 
-    // className="h-full  max-w-screen-2xl mx-auto"
-    className="mx-auto min-h-[100vh]"
+    <div
+      // className="h-full  max-w-screen-2xl mx-auto"
+      className=" min-h-[100vh] overflow-hidden"
     >
-      {/* <Suspense fallback={<ResultsSkeleton />}> */}
-        <Categories />
-        <YouMightLike />
-        <FeatureClips />
-      {/* </Suspense> */}
+      <Categories />
+      <YouMightLike />
+      <FeatureClips />
     </div>
   );
 }

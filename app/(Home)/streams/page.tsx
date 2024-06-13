@@ -1,7 +1,7 @@
 import React from "react";
 import CommentatorStream from "../(commentator)/commentator-streams";
 import AdminStream from "../(admin)/admin-streams";
-import { ROLE } from "@/app/enums/role";
+// import { ROLE } from "@/app/enums/role";
 import useUserStore from "@/store/use-store-user";
 
 const Streams = () => {
@@ -9,8 +9,8 @@ const Streams = () => {
 
   return (
     <>
-      {user?.role === ROLE?.COMMENTATOR && <CommentatorStream />}
-      {user?.role === ROLE?.ADMIN && <AdminStream />}
+      {user?.role === "COMMENTATOR" && <CommentatorStream />}
+      {user?.role === "ADMIN" && <AdminStream />}
     </>
   );
 };

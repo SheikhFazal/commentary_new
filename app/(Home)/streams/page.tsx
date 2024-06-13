@@ -5,7 +5,7 @@ import { ROLE } from "@/app/enums/role";
 import useUserStore from "@/store/use-store-user";
 
 const Streams = () => {
-  const user = useUserStore((state: any) => state.user);
+  const user: any = useUserStore((state: any) => state.user);
 
   return (
     <>

@@ -6,6 +6,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { LiveBadge } from "@/components/live-badge";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const avatarSizes = cva("", {
   variants: {
@@ -45,22 +46,22 @@ export const UserAvatar = ({
   return (
     <div className="relative">
       <Avatar
-        className={cn(
-          isLive && "ring-2 ring-rose-500",
-          avatarSizes({ size })
-        )}
+        className={cn(isLive && "ring-2 ring-rose-500", avatarSizes({ size }))}
       >
         {imageUrl ? (
-          <>
+          <Link href="/user-profile">
             <AvatarImage src={imageUrl} className="object-cover" />
-
             <AvatarFallback>
-              {username[0]}
+              {username}
               {username[username.length - 1]}
             </AvatarFallback>
-          </>
+          </Link>
         ) : (
-          <div className={isActive ? "text-[#001BFF] p-1" : "p-1 text-[#778195]"}>{icon}</div>
+          <div
+            className={isActive ? "text-[#001BFF] p-1" : "p-1 text-[#778195]"}
+          >
+            {icon}
+          </div>
         )}
       </Avatar>
       {canShowBadge && (

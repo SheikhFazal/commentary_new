@@ -18,6 +18,12 @@ const credentials = {
     username: "John Smith",
     role: "COMMENTATOR",
   },
+  user: {
+    email: "user@example.com",
+    password: "user123",
+    username: "John User",
+    role: "USER",
+  },
 };
 const SignIn = () => {
   const setUser = useUserStore((state: any) => state.setUser);
@@ -54,6 +60,13 @@ const SignIn = () => {
       toast.success("Login successfully!");
       setUser(credentials.commentator);
       router.push("/streams");
+    } else if (
+      email === credentials.user.email &&
+      password === credentials.user.password
+    ) {
+      toast.success("Login successfully!");
+      setUser(credentials.user);
+      router.push("/");
     } else {
       toast.error("Invalid email or password");
     }

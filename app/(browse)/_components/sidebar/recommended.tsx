@@ -5,7 +5,7 @@ import { User } from "@prisma/client";
 import { useSidebar } from "@/store/use-sidebar";
 
 import { UserItem, UserItemSkeleton } from "./user-item";
-import { Compass, LayoutGrid, Users, Calendar } from "lucide-react";
+import { Compass, LayoutGrid, Users, Calendar, Home } from "lucide-react";
 
 interface RecommendedProps {
   data: (User & {
@@ -16,27 +16,34 @@ interface RecommendedProps {
 const data = [
   {
     id: 1,
+    username: "Home",
+    imageUrl: "",
+    link: "",
+    icon: <Home size={25} />,
+  },
+  {
+    id: 2,
     username: "Discover",
     imageUrl: "",
     link: "discover",
     icon: <Compass size={25} />,
   },
   {
-    id: 2,
+    id: 3,
     username: "Category",
     imageUrl: "",
     link: "category",
     icon: <LayoutGrid size={25} />,
   },
   {
-    id: 3,
+    id: 4,
     username: "Following",
     imageUrl: "",
     link: "following",
     icon: <Users />,
   },
   {
-    id: 4,
+    id: 5,
     username: "Events",
     imageUrl: "",
     link: "events",

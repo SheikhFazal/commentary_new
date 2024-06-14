@@ -58,21 +58,21 @@ export const LiveStreamingSlider = () => {
   return (
     <div className="mb-10">
       <div className=" flex justify-center items-center overflow-hidden relative">
-        <div className="flex gap-2 absolute right-14 top-10   z-10">
-          <button
-            className=" rounded-full bg-white flex items-center justify-center h-7 w-7 p-1"
-            onClick={previous}
-          >
-            <MoveLeft color={"#222938"} />
-          </button>
-          <button
-            className=" rounded-full bg-white flex items-center justify-center h-7 w-7 p-1"
-            onClick={next}
-          >
-            <MoveRight color={"#222938"} />
-          </button>
-        </div>
-        <div className=" max-w-[77vw] p-2 ">
+        <div className=" max-w-[77vw] p-2 relative">
+          <div className="flex gap-2 absolute right-14 sm:top-10 top-24   z-10">
+            <button
+              className=" rounded-full bg-white flex items-center justify-center h-6 w-6 p-1"
+              onClick={previous}
+            >
+              <MoveLeft color={"#222938"} />
+            </button>
+            <button
+              className=" rounded-full bg-white flex items-center justify-center h-6 w-6 p-1"
+              onClick={next}
+            >
+              <MoveRight color={"#222938"} />
+            </button>
+          </div>
           <Slider ref={sliderRef} {...settings}>
             {liveStreamData?.map((ele) => (
               <React.Fragment key={ele?.id}>
@@ -97,7 +97,7 @@ export const LiveStreamingSlider = () => {
                       <Eye size={17} /> {ele?.onlineWatchingCount}
                     </div>
                   </div>
-                  <div className=" flex justify-between items-center bg-transparent p-5 ">
+                  <div className=" flex justify-between items-center flex-wrap sm:gap-0 gap-4 bg-transparent p-5 ">
                     <div className="flex flex-col gap-2">
                       <h1 className="font-bold text-3xl">{ele?.streamTitle}</h1>
                       <div className="flex items-center gap-x-3">

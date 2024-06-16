@@ -99,8 +99,8 @@ const Categories = () => {
             onClick={next}
           >
             <MoveRight />
-          </button>
-        </div>
+          </button> 
+        </div> 
       </div>
       <div className="overflow-hidden">
         {/* <CustomSlider isSlidePerRow array={categoriesData} sliderRef={sliderRef} settingData={settings} /> */}

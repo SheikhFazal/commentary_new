@@ -19,7 +19,7 @@ const KeysPage = () => {
   if (user?.role !== ROLE?.COMMENTATOR) return notFound();
   return (
     <div className="p-6">
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex flex-wrap items-center gap-4 justify-between mb-4">
         <h1 className="text-2xl font-bold">Keys & URLs</h1>
         <ConnectModal />
       </div>

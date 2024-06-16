@@ -102,15 +102,16 @@ export const LiveStreamingSlider = () => {
                       <h1 className="font-bold text-3xl">{ele?.streamTitle}</h1>
                       <div className="flex items-center gap-x-3">
                         <UserAvatar
-                          username=""
+                          username={ele?.username}
                           imageUrl={ele?.profileImg}
                           isLive={false}
+                          link={'/user-profile'}
                         />
-                        <div className="flex flex-col text-xs overflow-hidden">
+                        {/* <div className="flex flex-col text-xs overflow-hidden">
                           <p className="truncate  hover:text-blue-500 flex gap-2 item-center">
                             {ele?.username}
                           </p>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                     <div className="">

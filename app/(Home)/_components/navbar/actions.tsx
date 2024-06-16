@@ -59,16 +59,18 @@ export const Actions = () => {
   ];
 
   return (
-    <div className=" flex items-end gap-6">
-      <div className="">
-        <button
-          className="flex gap-1 items-center text-xs p-3 bg-[#001BFF] rounded-full"
-          type="button"
-          onClick={() => setShowModal(true)}
-        >
-          <Radio size={16} /> Go Live
-        </button>
-      </div>
+    <div className=" flex sm:items-end items-center sm:gap-6 gap-3">
+      {user?.role === "COMMENTATOR" && (
+        <div className="">
+          <button
+            className="flex gap-1 items-center text-xs sm:p-3 p-2 bg-[#001BFF] sm:rounded-full rounded-lg"
+            type="button"
+            onClick={() => setShowModal(true)}
+          >
+            <Radio size={16} /> Go Live
+          </button>
+        </div>
+      )}
       <div className="">
         <Notification
           setIsOpen={setIsOpen}
@@ -89,7 +91,7 @@ export const Actions = () => {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={`https://st3.depositphotos.com/15648834/17930/v/450/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg`}
-              className="h-9 w-9 rounded-full"
+              className="sm:h-9 sm:w-9 h-8 w-8 rounded-full"
               alt=""
             />
             <ChevronDown size={16} />
@@ -112,13 +114,13 @@ export const Actions = () => {
               />
               <div className="flex flex-col overflow-hidden">
                 <span>{user?.name}</span>
-                <span className="text-xs " >{user?.email}</span>
+                <span className="text-xs ">{user?.email}</span>
               </div>
             </div>
             <div className=" rounded  " role="none">
               {commentatorLinks?.map((ele: any) => (
                 <button
-                  key={ele?.id} 
+                  key={ele?.id}
                   className="flex items-center gap-3 px-4 py-2 text-xs hover:bg-blue-600 rounded w-full text-left"
                   role="menuitem"
                   onClick={() => router.push(ele?.link)}
@@ -139,7 +141,7 @@ export const Actions = () => {
           </div>
         )}
       </div>
-      {showModal && (
+      {showModal && user?.role === "COMMENTATOR" && (
         <GoLiveModalBox showModal={showModal} setShowModal={setShowModal} />
       )}
     </div>

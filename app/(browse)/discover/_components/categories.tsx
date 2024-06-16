@@ -6,25 +6,39 @@ import Slider from "react-slick";
 import { ChevronRight } from "lucide-react";
 
 const categoriesData = [
-  { id: 1, name: "Football", icon: "/football.png", isSelected: true },
-  { id: 2, name: "Cricket", icon: "/cricket.png", isSelected: false },
-  { id: 3, name: "Tennis", icon: "/tennis.png", isSelected: false },
-  { id: 4, name: "Hockey", icon: "/hockey.png", isSelected: false },
-  { id: 5, name: "Golf", icon: "/golf.png", isSelected: false },
-  { id: 6, name: "Badminton", icon: "/badminton.png", isSelected: false },
-  { id: 7, name: "Boxing", icon: "/boxing.png", isSelected: false },
-  { id: 8, name: "Horse Racing", icon: "/horse-riding.png", isSelected: false },
+  { id: 1, name: "Football", icon: "/football.png" },
+  { id: 2, name: "Cricket", icon: "/cricket.png" },
+  { id: 3, name: "Tennis", icon: "/tennis.png" },
+  { id: 4, name: "Hockey", icon: "/hockey.png" },
+  { id: 5, name: "Golf", icon: "/golf.png" },
+  { id: 6, name: "Badminton", icon: "/badminton.png" },
+  { id: 7, name: "Boxing", icon: "/boxing.png" },
+  { id: 8, name: "Horse Racing", icon: "/horse-riding.png" },
 ];
 const Categories = () => {
-  const [categories, setCategories] = useState(categoriesData);
-  const handleClick = (id: any) => {
-    const updatedCategories = categories.map((category) =>
-      category.id === id
-        ? { ...category, isSelected: true }
-        : { ...category, isSelected: false }
-    );
-    setCategories(updatedCategories);
+  // const [categories, setCategories] = useState(categoriesData);
+  // const handleClick = (id: any) => {
+  //   const updatedCategories = categories.map((category) =>
+  //     category.id === id
+  //       ? { ...category, isSelected: true }
+  //       : { ...category, isSelected: false }
+  //   );
+  //   setCategories(updatedCategories);
+  // };
+
+  const [selectedCategories, setSelectedCategories] =
+    useState<any[]>(categoriesData);
+
+  const handleCategoryClick = (id: any) => {
+    setSelectedCategories((prevSelected) => {
+      if (prevSelected.includes(id)) {
+        return prevSelected.filter((categoryId) => categoryId !== id);
+      } else {
+        return [...prevSelected, id];
+      }
+    });
   };
+
   const sliderRef = useRef<Slider | null>(null);
   const next = () => {
     sliderRef.current?.slickNext();
@@ -32,6 +46,7 @@ const Categories = () => {
   const previous = () => {
     sliderRef.current?.slickPrev();
   };
+
   const settings = {
     className: "center",
     // centerMode: true,
@@ -49,7 +64,6 @@ const Categories = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-        
         },
       },
       {
@@ -92,14 +106,16 @@ const Categories = () => {
         {/* <CustomSlider isSlidePerRow array={categoriesData} sliderRef={sliderRef} settingData={settings} /> */}
         <div className="slider-container max-w-[77vw] ">
           <Slider ref={sliderRef} {...settings}>
-            {categories?.length &&
-              categories?.map((ele) => (
+            {selectedCategories?.length &&
+              selectedCategories?.map((ele) => (
                 <div key={ele?.id} className="px-2">
                   <button
-                    onClick={() => handleClick(ele?.id)}
+                    onClick={() => handleCategoryClick(ele.id)}
                     key={ele?.id}
                     className={`w-full flex items-center rounded-md sm:gap-2 gap-1 justify-between font-medium sm:px-3 px-2 py-5 mb-5  ${
-                      ele?.isSelected ? "bg-[#001BFF]" : "bg-[#222938]"
+                      selectedCategories.includes(ele.id)
+                        ? "bg-[#001BFF]"
+                        : "bg-[#222938]"
                     }`}
                     type="button"
                   >
@@ -107,7 +123,11 @@ const Categories = () => {
                     <img src={ele?.icon} className="h-10" alt="" />
                     {ele?.name}
                     <ChevronRight
-                      color={ele?.isSelected ? "#ffff" : "#394257"}
+                      color={
+                        selectedCategories.includes(ele.id)
+                          ? "#ffff"
+                          : "#394257"
+                      }
                     />
                   </button>
                 </div>

@@ -21,7 +21,7 @@ export const Logo = () => {
             width="32"
           />
         </div> */}
-        <div className=" mx-8 ">
+        <div className=" sm:mx-8 mx-4 ">
           <Image
             src="/CommenTray_logo 1.png"
             alt="Gamehub"

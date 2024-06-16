@@ -17,9 +17,9 @@ export const KeyCard = ({
   const [show, setShow] = useState(false);
 
   return (
-    <div className="rounded-xl bg-muted p-6">
-      <div className="flex items-start gap-x-10">
-        <p className="font-semibold shrink-0">
+    <div className="rounded-xl bg-[#11151E] p-6">
+      <div className="flex sm:flex-row flex-col items-start md:gap-8 gap-3">
+        <p className="font-semibold pt-2 shrink-0">
           Stream Key
         </p>
         <div className="space-y-2 w-full">
@@ -28,6 +28,7 @@ export const KeyCard = ({
               value={value || ""}
               type={show ? "text" : "password"}
               disabled
+              className="bg-[#090A0D]"
               placeholder="Stream key"
             />
             <CopyButton value={value || ""} />

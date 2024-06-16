@@ -34,7 +34,7 @@ export const columns: ColumnDef<BlockedUser>[] = [
           username={row.original.username} 
           imageUrl={row.original.imageUrl}
         />
-        <span>{row.original.username}</span>
+        {/* <span>{row.original.username}</span> */}
       </div>
     )
   },

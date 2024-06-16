@@ -64,14 +64,15 @@ const AdminStream = () => {
                   </span>
                   <div className="flex items-center gap-x-3">
                     <UserAvatar
-                      username=""
+                      username={ele?.username}
+                      // link={'/user-profile'}
                       imageUrl={ele?.channelProfilePicture}
                       isLive={false}
                     />
                     <div className="flex flex-col text-sm overflow-hidden">
-                      <p className="truncate font-semibold hover:text-blue-500 flex gap-1 item-center">
+                      {/* <p className="truncate font-semibold hover:text-blue-500 flex gap-1 item-center">
                         {ele?.username}
-                      </p>
+                      </p> */}
                       <span className="text-[10px]">{ele?.hashTag}</span>
                     </div>
                   </div>

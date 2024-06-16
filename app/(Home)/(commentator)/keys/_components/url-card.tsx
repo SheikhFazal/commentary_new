@@ -10,9 +10,9 @@ export const UrlCard = ({
   value,
 }: UrlCardProps) => {
   return (
-    <div className="rounded-xl bg-muted p-6">
-      <div className="flex items-center gap-x-10">
-        <p className="font-semibold shrink-0">
+    <div className="rounded-xl bg-[#11151E] p-6">
+      <div className="flex sm:flex-row flex-col sm:items-center md:gap-8 gap-3  ">
+        <p className="font-semibold shrink-0 text-start">
           Server URL
         </p>
         <div className="space-y-2 w-full">
@@ -21,6 +21,7 @@ export const UrlCard = ({
               value={value || ""}
               disabled
               placeholder="Server URL"
+              className="bg-[#090A0D]"
             />
             <CopyButton
               value={value || ""}

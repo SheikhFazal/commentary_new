@@ -137,7 +137,10 @@ const History = () => {
       <div className="flex flex-col gap-y-4">
         {data?.length &&
           data?.map((ele) => (
-            <div key={ele?.id} className="px-3 mb-5 grid grid-cols-12 sm:gap-8 gap-3">
+            <div
+              key={ele?.id}
+              className="px-3 mb-5 grid grid-cols-12 sm:gap-8 gap-3"
+            >
               <div className="overflow-hidden md:h-40 rounded-xl lg:col-span-3 md:col-span-4 sm:col-span-6 col-span-12">
                 {/*  eslint-disable-next-line @next/next/no-img-element */}
                 <img src={ele?.thumbnailUrl} alt="" className="h-full w-full" />
@@ -145,13 +148,13 @@ const History = () => {
               <div className="lg:col-span-9 md:col-span-8 sm:col-span-6 col-span-12">
                 <div className="flex items-center gap-x-3">
                   <UserAvatar
-                    username=""
+                    username={ele?.name}
                     imageUrl={ele?.imageUrl}
                     isLive={false}
+                    link={"/user-profile"}
                   />
                   <div className="flex flex-col text-sm overflow-hidden">
                     <p className="truncate font-semibold hover:text-blue-500 flex gap-2 item-center">
-                      {ele?.name}
                       {ele?.isGreenChecked && (
                         <Check color="#00D247" size={16} />
                       )}

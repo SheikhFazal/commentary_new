@@ -32,13 +32,14 @@ const Following = () => {
                 <div className="mt-3">
                   <div className="flex items-center gap-x-3">
                     <UserAvatar
-                      username=""
+                      username={ele?.name}
                       imageUrl={ele?.imageUrl}
                       isLive={false}
+                      link={'/user-profile'}
                     />
                     <div className="flex flex-col text-sm overflow-hidden">
                       <p className="truncate font-semibold hover:text-blue-500 flex gap-2 item-center">
-                        {ele?.name}
+                        
                         {ele?.isGreenChecked && (
                           <Check color="#00D247" size={16} />
                         )}

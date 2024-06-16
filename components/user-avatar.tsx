@@ -36,7 +36,7 @@ export const UserAvatar = ({
   showBadge,
   size,
   icon,
-  link,
+  link = "",
 }: UserAvatarProps) => {
   const canShowBadge = showBadge && isLive;
   const pathname = usePathname();
@@ -45,25 +45,39 @@ export const UserAvatar = ({
   const isActive = pathname === href;
   return (
     <div className="relative">
-      <Avatar
-        className={cn(isLive && "ring-2 ring-rose-500", avatarSizes({ size }))}
-      >
-        {imageUrl ? (
-          <Link href="/user-profile">
-            <AvatarImage src={imageUrl} className="object-cover" />
-            <AvatarFallback>
-              {username}
-              {username[username.length - 1]}
-            </AvatarFallback>
+      <div className="flex items-center gap-x-3">
+        <Avatar
+          className={cn(
+            isLive && "ring-2 ring-rose-500",
+            avatarSizes({ size })
+          )}
+        >
+          {imageUrl ? (
+            <Link href={link}>
+              <AvatarImage src={imageUrl} className="object-cover" />
+              <AvatarFallback>
+                {username}
+                {/* {username[username.length - 1]} */}
+              </AvatarFallback>
+            </Link>
+          ) : (
+            <div
+              className={isActive ? "text-[#001BFF] p-1" : "p-1 text-[#778195]"}
+            >
+              {icon}
+            </div>
+          )}
+        </Avatar>
+
+        {imageUrl && (
+          <Link href={link}>
+            <p className="truncate text-xs hover:text-blue-500 flex gap-2 item-center">
+              {username ?? "NO Found"}
+            </p>
           </Link>
-        ) : (
-          <div
-            className={isActive ? "text-[#001BFF] p-1" : "p-1 text-[#778195]"}
-          >
-            {icon}
-          </div>
         )}
-      </Avatar>
+      </div>
+
       {canShowBadge && (
         <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2">
           <LiveBadge />

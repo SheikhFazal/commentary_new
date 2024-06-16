@@ -54,15 +54,16 @@ const Events = () => {
               <div className="mt-3 flex flex-wrap justify-between items-center">
                 <div className="flex items-center gap-x-3">
                   <UserAvatar
-                    username=""
+                    username={ele?.name}
                     imageUrl={ele?.imageUrl}
                     isLive={false}
+                    link={'/user-profile'}
                   />
-                  <div className="flex flex-col text-xs overflow-hidden">
+                  {/* <div className="flex flex-col text-xs overflow-hidden">
                     <p className="truncate  hover:text-blue-500 flex gap-2 item-center">
                       {ele?.name}
                     </p>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

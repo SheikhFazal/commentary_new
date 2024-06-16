@@ -227,13 +227,13 @@ export const Results = async ({ term }: ResultsProps) => {
               <div className="md:col-span-8 sm:col-span-6 col-span-12">
                 <div className="flex items-center gap-x-3">
                   <UserAvatar
-                    username=""
+                    username={ele?.name}
+                    link={"/user-profile"}
                     imageUrl={ele?.imageUrl}
                     isLive={false}
                   />
                   <div className="flex flex-col text-sm overflow-hidden">
                     <p className="truncate font-semibold hover:text-blue-500 flex gap-2 item-center">
-                      {ele?.name}
                       {ele?.isGreenChecked && (
                         <Check color="#00D247" size={16} />
                       )}

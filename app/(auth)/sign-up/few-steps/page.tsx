@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Plus, Check } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const interestCategoryData = [
   { id: 1, title: "World Cup" },
@@ -19,6 +20,7 @@ const interestCategoryData = [
 ];
 const JustFewSteps = () => {
   const [selectedCategories, setSelectedCategories] = useState<any[]>([]);
+  const router = useRouter();
   const [dob, setDob] = useState("");
   const [showAll, setShowAll] = useState(false);
 
@@ -39,7 +41,7 @@ const JustFewSteps = () => {
     : interestCategoryData.slice(0, 10);
 
   return (
-    <div className="lg:col-span-5 md:col-span-6 col-span-12 py-16 lg:px-16 md:px-12 px-8 bg-[#11151E] min-h-[140vh]">
+    <div className="lg:col-span-5 md:col-span-6 col-span-12 py-5 lg:px-16 md:px-12 px-8 bg-[#11151E] min-h-screen">
       <div className="">
         <p className="text-4xl   pt-16 py-20 text-center font-semibold">
           Just a few more details
@@ -48,7 +50,7 @@ const JustFewSteps = () => {
       <div className="flex flex-col gap-6">
         <span>What are your main interests</span>
 
-        <div className="flex flex-wrap gap-3 mb-10">
+        <div className="flex flex-wrap gap-3 mb-5">
           {displayedCategories?.map((category) => {
             const isSelected = selectedCategories.includes(category.id);
             return (
@@ -96,6 +98,7 @@ const JustFewSteps = () => {
 
         <button
           type="submit"
+          onClick={() => router.push("/sign-in")}
           className="py-[15px] mb-20 font-semibold text-lg px-8 rounded-full w-full bg-[#001BFF]"
         >
           Sign Up

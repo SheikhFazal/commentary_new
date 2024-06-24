@@ -25,7 +25,7 @@ const SignUp = () => {
     router.push("/sign-up/few-steps");
   };
   return (
-    <div className="lg:col-span-5 md:col-span-6 col-span-12 py-16 lg:px-16 md:px-12 px-8 bg-[#11151E]">
+    <div className="lg:col-span-5 md:col-span-6 col-span-12 py-8 lg:px-16 md:px-12 px-8 bg-[#11151E]">
       <div className="">
         <p className="text-4xl pt-8 pb-20 font-semibold text-center">Sign Up</p>
       </div>
@@ -66,7 +66,7 @@ const SignUp = () => {
           value={formValue?.password}
           type="password"
         />
-        <div className="flex justify-end my-5">
+        <div className="flex justify-end my-2">
           <p className="text-[#3F495F] text-sm">
             By clicking Sign Up, you are agreeing to our Terms of Services, are
             acknowledging our Privacy Notice and the EU, EEA & UK Consumer Right
@@ -80,7 +80,7 @@ const SignUp = () => {
           Next
         </button>
       </form>
-      <div className="grid grid-cols-12 flex items-center gap-4 my-16">
+      <div className="grid grid-cols-12 flex items-center gap-4 my-8">
         <div className="col-span-5 border border-[#3F495F] "></div>
         <span className="col-span-2 text-xs text-center w-[14]">
           Or Login Via
@@ -108,7 +108,7 @@ const SignUp = () => {
           />
         </button>
       </div>
-      <div className="pt-24 pb-5">
+      <div className="py-2">
         <p className="text-lg text-center">
           Already have an account?{" "}
           <button

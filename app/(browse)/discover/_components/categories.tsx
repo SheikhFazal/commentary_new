@@ -16,27 +16,12 @@ const categoriesData = [
   { id: 8, name: "Horse Racing", icon: "/horse-riding.png" },
 ];
 const Categories = () => {
-  // const [categories, setCategories] = useState(categoriesData);
-  // const handleClick = (id: any) => {
-  //   const updatedCategories = categories.map((category) =>
-  //     category.id === id
-  //       ? { ...category, isSelected: true }
-  //       : { ...category, isSelected: false }
-  //   );
-  //   setCategories(updatedCategories);
-  // };
+  const [checkedCategories, setCheckedCategories] = useState<number[]>([]);
 
-  const [selectedCategories, setSelectedCategories] =
-    useState<any[]>(categoriesData);
-
-  const handleCategoryClick = (id: any) => {
-    setSelectedCategories((prevSelected) => {
-      if (prevSelected.includes(id)) {
-        return prevSelected.filter((categoryId) => categoryId !== id);
-      } else {
-        return [...prevSelected, id];
-      }
-    });
+  const handleCategoryClick = (id: number) => {
+    setCheckedCategories((prev) =>
+      prev.includes(id) ? prev.filter((catId) => catId !== id) : [...prev, id]
+    );
   };
 
   const sliderRef = useRef<Slider | null>(null);
@@ -99,21 +84,21 @@ const Categories = () => {
             onClick={next}
           >
             <MoveRight />
-          </button> 
-        </div> 
+          </button>
+        </div>
       </div>
       <div className="overflow-hidden">
         {/* <CustomSlider isSlidePerRow array={categoriesData} sliderRef={sliderRef} settingData={settings} /> */}
         <div className="slider-container max-w-[77vw] ">
           <Slider ref={sliderRef} {...settings}>
-            {selectedCategories?.length &&
-              selectedCategories?.map((ele) => (
+            {categoriesData?.length &&
+              categoriesData?.map((ele: any) => (
                 <div key={ele?.id} className="px-2">
                   <button
-                    onClick={() => handleCategoryClick(ele.id)}
+                    onClick={() => handleCategoryClick(ele?.id)}
                     key={ele?.id}
                     className={`w-full flex items-center rounded-md sm:gap-2 gap-1 justify-between font-medium sm:px-3 px-2 py-5 mb-5  ${
-                      selectedCategories.includes(ele.id)
+                      checkedCategories.includes(ele?.id)
                         ? "bg-[#001BFF]"
                         : "bg-[#222938]"
                     }`}
@@ -124,7 +109,7 @@ const Categories = () => {
                     {ele?.name}
                     <ChevronRight
                       color={
-                        selectedCategories.includes(ele.id)
+                        checkedCategories.includes(ele?.id)
                           ? "#ffff"
                           : "#394257"
                       }

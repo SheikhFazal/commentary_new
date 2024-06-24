@@ -72,9 +72,9 @@ const SignIn = () => {
     }
   };
   return (
-    <div className="lg:col-span-5 md:col-span-6 col-span-12 py-16 lg:px-16 md:px-12 px-8 bg-[#11151E]">
+    <div className="lg:col-span-5 md:col-span-6 col-span-12 py-5 lg:px-16 md:px-12 px-8 bg-[#11151E]">
       <div className="">
-        <p className="text-4xl pb-32 pt-14 text-center">
+        <p className="text-4xl py-14 text-center">
           Hey there,👏 <br /> <span className="font-bold">welcome back</span>
         </p>
       </div>
@@ -97,7 +97,7 @@ const SignIn = () => {
           value={formValue?.password}
           type="password"
         />
-        <div className="flex justify-end my-5">
+        <div className="flex justify-end my-3">
           <button
             onClick={() => router.push("/forgot-password")}
             type="button"
@@ -113,14 +113,14 @@ const SignIn = () => {
           Login
         </button>
       </form>
-      <div className="grid grid-cols-12 flex items-center gap-4 my-16">
+      <div className="grid grid-cols-12 flex items-center gap-4 my-8">
         <div className="col-span-5 border border-[#3F495F] "></div>
         <span className="col-span-2 text-xs text-center w-[14]">
           Or Login Via
         </span>
         <div className="col-span-5 border border-[#3F495F] "></div>
       </div>
-      <div className="my-7">
+      <div className="my-5">
         <button className="py-[15px] font-semibold text-lg px-8 rounded-full flex items-center justify-center gap-3 w-full bg-[#222938]">
           <Image
             src="/google-white-icon.png"
@@ -131,7 +131,7 @@ const SignIn = () => {
           Login With Google
         </button>
       </div>
-      <div className="pt-24 pb-5">
+      <div className="py-2">
         <p className="text-lg text-center">
           Don’t have an account?{" "}
           <button

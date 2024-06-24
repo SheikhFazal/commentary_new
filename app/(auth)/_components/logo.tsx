@@ -12,7 +12,10 @@ export const Logo = () => {
   return (
     <div
       className=" lg:col-span-7 md:col-span-6 md:block hidden  "
-      style={{ backgroundImage: `url(${"/auth-layout-pic.png"})`, backgroundSize:"100% 100%"}}
+      style={{
+        backgroundImage: `url(${"/auth-layout-pic.png"})`,
+        backgroundSize: "100% 100%",
+      }}
     >
       <div className=" pt-[330px] h-screen flex flex-col gap-3 justify-center items-center ">
         <Image
@@ -25,17 +28,6 @@ export const Logo = () => {
           All you love in <br /> one place
         </p>
       </div>
-      {/* <div className={cn(
-        "flex flex-col items-center",
-        font.className,
-      )}>
-        <p className="text-xl font-semibold">
-          Gamehub
-        </p>
-        <p className="text-sm text-muted-foreground">
-          Let&apos;s play
-        </p>
-      </div> */}
     </div>
   );
 };

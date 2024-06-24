@@ -13,12 +13,11 @@ import { Sidebar } from "./_components/sidebar";
 import { usePathname, useRouter } from "next/navigation";
 import NotFoundPage from "../not-found";
 import useUserStore from "@/store/use-store-user";
+import Unauthorize from "./_components/unauthorize";
 
 interface HomeLayoutProps {
   children: ReactNode;
 }
-const UnauthorizedPage = () => <div>401 Unauthorized</div>;
-
 const HomeLayout = ({ children }: any) => {
   const pathname = usePathname();
   const router = useRouter();
@@ -37,40 +36,6 @@ const HomeLayout = ({ children }: any) => {
       router.push("/sign-in");
       return;
     }
-    // const loadComponent = async () => {
-    //   if (user.role === "ADMIN") {
-    //     if (pathname.startsWith("/dashboard")) {
-    //       const DashboardPage = (await import("./(admin)/dashboard/page"))
-    //         .default;
-    //       setLoadedComponent(<DashboardPage />);
-    //     } else if (pathname.startsWith("/users")) {
-    //       const UsersPage = (await import("./(admin)/users/page")).default;
-    //       setLoadedComponent(<UsersPage />);
-    //     } else if (pathname.startsWith("/streams")) {
-    //       const AdminStreamsPage = (await import("./streams/page")).default;
-    //       setLoadedComponent(<AdminStreamsPage />);
-    //     }
-    //   } else if (user.role === "COMMENTATOR") {
-    //     if (pathname.startsWith("/streams")) {
-    //       const StreamPage = (await import("./streams/page")).default;
-    //       setLoadedComponent(<StreamPage />);
-    //     } else if (pathname.startsWith("/keys")) {
-    //       const KeysPage = (await import("./(commentator)/keys/page")).default;
-    //       setLoadedComponent(<KeysPage />);
-    //     } else if (pathname.startsWith("/chat")) {
-    //       const ChatPage = (await import("./(commentator)/chat/page")).default;
-    //       setLoadedComponent(<ChatPage />);
-    //     } else if (pathname.startsWith("/community")) {
-    //       const CommunityPage = (await import("./(commentator)/community/page"))
-    //         .default;
-    //       setLoadedComponent(<CommunityPage />);
-    //     } else if (pathname.startsWith("/history")) {
-    //       const HistoryPage = (await import("./(commentator)/history/page"))
-    //         .default;
-    //       setLoadedComponent(<HistoryPage />);
-    //     }
-    //   }
-    // };
 
     const loadComponent = async () => {
       if (user.role === "ADMIN") {
@@ -85,7 +50,7 @@ const HomeLayout = ({ children }: any) => {
           const AdminStreamsPage = (await import("./streams/page")).default;
           setLoadedComponent(<AdminStreamsPage />);
         } else {
-          setLoadedComponent(<UnauthorizedPage />);
+          setLoadedComponent(<Unauthorize />);
         }
       } else if (user.role === "COMMENTATOR") {
         if (pathname.startsWith("/streams")) {
@@ -106,10 +71,10 @@ const HomeLayout = ({ children }: any) => {
             .default;
           setLoadedComponent(<HistoryPage />);
         } else {
-          setLoadedComponent(<UnauthorizedPage />);
+          setLoadedComponent(<Unauthorize />);
         }
       } else {
-        setLoadedComponent(<UnauthorizedPage />);
+        setLoadedComponent(<Unauthorize />);
       }
     };
 

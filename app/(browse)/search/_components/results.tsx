@@ -10,76 +10,7 @@ interface ResultsProps {
 }
 
 export const Results = async ({ term }: ResultsProps) => {
-  // const data = await getSearch(term);
-  // const data: any = [];
-  // const data = [
-  //   {
-  //     id: 1,
-  //     username: "John Smith",
-  //     updatedAt:'10-5-2015',
-  //     isLive: true,
-  //     name: "nam",
-  //     imageUrl:
-  //       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDGg1BR6MYS3MhZYqUz09NV1PvigOy0GOXGDChOWB9Tx-5423zzYcRLlo5cxjNY8dUXOU&usqp=CAU",
-  //     thumbnailUrl:
-  //       "https://www.copahost.com/blog/wp-content/uploads/2019/07/imgsize2.png",
-  //   },
-  //   {
-  //     id: 2,
-  //     username: "John Smith",
-  //     updatedAt:'10-5-2015',
-  //     isLive: true,
-  //     name: "nam",
-  //     imageUrl:
-  //       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDGg1BR6MYS3MhZYqUz09NV1PvigOy0GOXGDChOWB9Tx-5423zzYcRLlo5cxjNY8dUXOU&usqp=CAU",
-  //     thumbnailUrl:
-  //       "https://www.copahost.com/blog/wp-content/uploads/2019/07/imgsize2.png",
-  //   },
-  //   {
-  //     id: 3,
-  //     username: "John Smith",
-  //     updatedAt:'10-5-2015',
-  //     isLive: true,
-  //     name: "nam",
-  //     imageUrl:
-  //       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDGg1BR6MYS3MhZYqUz09NV1PvigOy0GOXGDChOWB9Tx-5423zzYcRLlo5cxjNY8dUXOU&usqp=CAU",
-  //     thumbnailUrl:
-  //       "https://www.copahost.com/blog/wp-content/uploads/2019/07/imgsize2.png",
-  //   },
-  //   {
-  //     id: 4,
-  //     username: "John Smith",
-  //     updatedAt:'10-5-2015',
-  //     isLive: true,
-  //     name: "nam",
-  //     imageUrl:
-  //       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDGg1BR6MYS3MhZYqUz09NV1PvigOy0GOXGDChOWB9Tx-5423zzYcRLlo5cxjNY8dUXOU&usqp=CAU",
-  //     thumbnailUrl:
-  //       "https://www.copahost.com/blog/wp-content/uploads/2019/07/imgsize2.png",
-  //   },
-  //   {
-  //     id: 5,
-  //     username: "John Smith",
-  //     updatedAt:'10-5-2015',
-  //     isLive: false,
-  //     name: "nam",
-  //     imageUrl:
-  //       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDGg1BR6MYS3MhZYqUz09NV1PvigOy0GOXGDChOWB9Tx-5423zzYcRLlo5cxjNY8dUXOU&usqp=CAU",
-  //     thumbnailUrl:
-  //       "https://www.copahost.com/blog/wp-content/uploads/2019/07/imgsize2.png",
-  //   },
-  //   {
-  //     id: 6,
-  //     username: "John Smith",
-  //     updatedAt:'10-5-2015',
-  //     isLive: false,
-  //     name: "nam",
-  //     imageUrl:
-  //       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDGg1BR6MYS3MhZYqUz09NV1PvigOy0GOXGDChOWB9Tx-5423zzYcRLlo5cxjNY8dUXOU&usqp=CAU",
-  //     thumbnailUrl:
-  //       "https://www.copahost.com/blog/wp-content/uploads/2019/07/imgsize2.png",
-  //   },
-  // ];
+  
   const data = [
     {
       id: 1,
@@ -94,7 +25,7 @@ export const Results = async ({ term }: ResultsProps) => {
       imageUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDGg1BR6MYS3MhZYqUz09NV1PvigOy0GOXGDChOWB9Tx-5423zzYcRLlo5cxjNY8dUXOU&usqp=CAU",
       thumbnailUrl:
-        "https://www.copahost.com/blog/wp-content/uploads/2019/07/imgsize2.png",
+        "https://st4.depositphotos.com/1000423/38545/i/1600/depositphotos_385454156-stock-photo-football-players-shooting-at-goal.jpg",
     },
     {
       id: 2,
@@ -109,7 +40,7 @@ export const Results = async ({ term }: ResultsProps) => {
       imageUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDGg1BR6MYS3MhZYqUz09NV1PvigOy0GOXGDChOWB9Tx-5423zzYcRLlo5cxjNY8dUXOU&usqp=CAU",
       thumbnailUrl:
-        "https://www.copahost.com/blog/wp-content/uploads/2019/07/imgsize2.png",
+        "https://st4.depositphotos.com/1000423/38545/i/1600/depositphotos_385454156-stock-photo-football-players-shooting-at-goal.jpg",
     },
     {
       id: 3,
@@ -124,7 +55,7 @@ export const Results = async ({ term }: ResultsProps) => {
       imageUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDGg1BR6MYS3MhZYqUz09NV1PvigOy0GOXGDChOWB9Tx-5423zzYcRLlo5cxjNY8dUXOU&usqp=CAU",
       thumbnailUrl:
-        "https://www.copahost.com/blog/wp-content/uploads/2019/07/imgsize2.png",
+        "https://st4.depositphotos.com/1000423/38545/i/1600/depositphotos_385454156-stock-photo-football-players-shooting-at-goal.jpg",
     },
     {
       id: 4,
@@ -139,7 +70,7 @@ export const Results = async ({ term }: ResultsProps) => {
       imageUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDGg1BR6MYS3MhZYqUz09NV1PvigOy0GOXGDChOWB9Tx-5423zzYcRLlo5cxjNY8dUXOU&usqp=CAU",
       thumbnailUrl:
-        "https://www.copahost.com/blog/wp-content/uploads/2019/07/imgsize2.png",
+        "https://st4.depositphotos.com/1000423/38545/i/1600/depositphotos_385454156-stock-photo-football-players-shooting-at-goal.jpg",
     },
     {
       id: 5,
@@ -154,7 +85,7 @@ export const Results = async ({ term }: ResultsProps) => {
       imageUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDGg1BR6MYS3MhZYqUz09NV1PvigOy0GOXGDChOWB9Tx-5423zzYcRLlo5cxjNY8dUXOU&usqp=CAU",
       thumbnailUrl:
-        "https://www.copahost.com/blog/wp-content/uploads/2019/07/imgsize2.png",
+        "https://st4.depositphotos.com/1000423/38545/i/1600/depositphotos_385454156-stock-photo-football-players-shooting-at-goal.jpg",
     },
     {
       id: 6,
@@ -169,7 +100,7 @@ export const Results = async ({ term }: ResultsProps) => {
       imageUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDGg1BR6MYS3MhZYqUz09NV1PvigOy0GOXGDChOWB9Tx-5423zzYcRLlo5cxjNY8dUXOU&usqp=CAU",
       thumbnailUrl:
-        "https://www.copahost.com/blog/wp-content/uploads/2019/07/imgsize2.png",
+        "https://st4.depositphotos.com/1000423/38545/i/1600/depositphotos_385454156-stock-photo-football-players-shooting-at-goal.jpg",
     },
     {
       id: 7,
@@ -184,7 +115,7 @@ export const Results = async ({ term }: ResultsProps) => {
       imageUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDGg1BR6MYS3MhZYqUz09NV1PvigOy0GOXGDChOWB9Tx-5423zzYcRLlo5cxjNY8dUXOU&usqp=CAU",
       thumbnailUrl:
-        "https://www.copahost.com/blog/wp-content/uploads/2019/07/imgsize2.png",
+        "https://st4.depositphotos.com/1000423/38545/i/1600/depositphotos_385454156-stock-photo-football-players-shooting-at-goal.jpg",
     },
     {
       id: 8,
@@ -199,7 +130,7 @@ export const Results = async ({ term }: ResultsProps) => {
       imageUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDGg1BR6MYS3MhZYqUz09NV1PvigOy0GOXGDChOWB9Tx-5423zzYcRLlo5cxjNY8dUXOU&usqp=CAU",
       thumbnailUrl:
-        "https://www.copahost.com/blog/wp-content/uploads/2019/07/imgsize2.png",
+        "https://st4.depositphotos.com/1000423/38545/i/1600/depositphotos_385454156-stock-photo-football-players-shooting-at-goal.jpg",
     },
   ];
 
